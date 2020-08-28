@@ -2,12 +2,15 @@ const express = require('express');
 const tourController = require('../controllers/tourController');
 const authController = require('../controllers/authController');
 const reviewRouter = require('../routes/reviewRoutes');
+const bookingRouter = require('../routes/bookingRoutes');
 // const reviewController = require('../controllers/reviewController');
 const router = express.Router();
 // const {createTour,getAllTours,getTour,updateTour,deleteTour} = require('../controllers/tourController')
 // router.param('id', tourController.checkId);
 
 router.use('/:tourId/reviews', reviewRouter);
+router.use('/:tourId/bookings', bookingRouter);
+
 router
   .route('/top-5-cheap')
   .get(tourController.aliasTopTours, tourController.getAllTours);

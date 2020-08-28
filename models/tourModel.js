@@ -138,6 +138,13 @@ tourSchema.virtual('reviews',{
   foreignField: 'tour'
 })
 
+tourSchema.virtual('bookings',{
+  ref:'Booking',
+  localField: '_id',
+  foreignField: 'tour'
+})
+
+
 
 // *****/DOCUMENT MIDDLEWARE: Runs before the .save() and .create() events/*****
 

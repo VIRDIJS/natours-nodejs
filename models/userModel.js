@@ -59,9 +59,18 @@ const userSchema = new mongoose.Schema(
     },
   },
   {
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true },
     timestamps: true,
   }
 );
+
+userSchema.virtual('bookings',{
+  ref:'Booking',
+  localField: '_id',
+  foreignField: 'user'
+})
+
 
 // *****/MIDDLEWARE/*****
 

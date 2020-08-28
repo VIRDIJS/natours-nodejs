@@ -12,12 +12,17 @@ router
   .post(
     authController.restrictTo('user'),
     reviewController.setTourUserIds,
+    reviewController.checkBookings,
     reviewController.createReview
   );
 
 router
   .route('/:id')
   .get(reviewController.getReview)
+  .post(authController.restrictTo('user'),
+  reviewController.setTourUserIds,
+  reviewController.checkBookings,
+  reviewController.createReview)
   .delete(authController.restrictTo('user','admin'), reviewController.deleteReview)
   .patch(authController.restrictTo('user','admin'), reviewController.updateReview);
 
