@@ -34,7 +34,7 @@
     "nodemailer": "^6.6.1",
     "parcel-bundler": "^1.12.4",
     "pug": "^3.0.0",
-    "sharp": "^0.25.4",
+    "sharp": "^0.30.5",
     "slugify": "^1.4.5",
     "stripe": "^7.15.0",
     "validator": "^13.7.0",
